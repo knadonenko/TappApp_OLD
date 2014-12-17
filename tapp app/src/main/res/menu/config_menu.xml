@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dial"
+        android:title="@string/dialText"/>
+
+    <item
+        android:id="@+id/GPS"
+        android:title="@string/gpsText"/>
+
+    <item
+        android:id="@+id/Record"
+        android:title="@string/recordText"/>
+
+    <item
+        android:id="@+id/notActive"
+        android:title="@string/not_active"/>
+
+</menu>

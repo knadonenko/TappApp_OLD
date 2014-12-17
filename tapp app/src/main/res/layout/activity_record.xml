@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_config"
+    tools:context="com.taptester.tappapp.RecordActivity">
+
+    <TextView
+        android:text="@string/hello_world"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/pleaseRecord"
+        android:id="@+id/textView"
+        android:textColor="#FFF"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="65dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recordDesc"
+        android:id="@+id/textView3"
+        android:textColor="#FFF"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/textView3"
+        android:id="@+id/recordStartLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:visibility="visible">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recordButtonTXT"
+            android:id="@+id/recordBtn"
+            android:background="@drawable/white_button"
+            android:textColor="#F00"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:onClick="startRecord"
+            android:drawableLeft="@drawable/red_circle"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_below="@+id/stopButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="90dp" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/noBtn"
+            android:id="@+id/noBtn"
+            android:onClick="CloseActivity"
+            android:background="@drawable/white_button"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stopTxt"
+            android:id="@+id/stopButton"
+            android:background="@drawable/white_button"
+            android:onClick="stopRecord"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/textView3"
+        android:id="@+id/recordSaveLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:visibility="gone">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recordAgain"
+            android:id="@+id/recordAgainBtn"
+            android:onClick="startRecord"
+            android:textColor="#F00"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/red_circle"
+            android:layout_above="@+id/okBtn"
+            android:background="@drawable/white_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="20dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/okTxt"
+            android:id="@+id/okBtn"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="saveRecord"
+            android:background="@drawable/white_button"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/listenTxt"
+            android:id="@+id/playButton"
+            android:layout_above="@+id/recordAgainBtn"
+            android:background="@drawable/white_button"
+            android:layout_centerHorizontal="true"
+            android:onClick="playRecord"
+            android:layout_marginBottom="10dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/activity_top"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/relativeLayout">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/recordMemo"
+            android:id="@+id/textView4"
+            android:textColor="#03AFE1"
+            android:paddingLeft="20dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+</RelativeLayout>

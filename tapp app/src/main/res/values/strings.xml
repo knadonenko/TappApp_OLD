@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tap Tester</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_config_">Configuration</string>
+    <string name="not_active">Not Active</string>
+    <string name="one_tap">One Tap</string>
+    <string name="two_tap">Two Taps</string>
+    <string name="three_tap">Three Taps</string>
+    <string name="four_tap">Four Taps</string>
+    <string name="five_tap">Five Taps</string>
+    <string name="dialText">Dial</string>
+    <string name="gpsText">GPS</string>
+    <string name="recordText">Record Memo</string>
+    <string name="record">Record</string>
+    <string name="title_activity_dial">DialActivity</string>
+    <string name="phoneBook">Open phone book</string>
+    <string name="save">SAVE</string>
+    <string name="title_activity_info_acitivity">K-Apps</string>
+    <string name="tapText">TAP</string>
+    <string name="modeText">MODE</string>
+    <string name="keepYourEyes">Keep your eyes on the road</string>
+    <string name="titleDescription">Dialing and navigating have never been easier: a simple tap or slide of
+your finger anywhere on the screen will dial your chosen contact or
+navigate to your chosen destination. You can also record a memo.\n </string>
+    <string name="description">
+        Setting up: \n
+        Easily set your most frequent contacts and destinations and you are ready to go. \n\n
+For example: 1 TAP dials mom, 2 TAPS dials work,
+a slide up navigates you home…\n
+If you wish you can record your command, which will sound every time you use the
+same TAP/Slide, this will give you a confirmation without looking at the screen… \n\n
+
+Example: if 1 TAP dials mom, just record "dialing mom" \n
+1. Choose EDIT to set your TAP commands. (Click and hold edit button)\n
+2. Click the chosen TAP Slide\n
+3. Choose command from dialog box\n
+\t 1. Dial > Choose contact from your contacts\n
+\t 2. GPS > Set destination in GPS application\n
+\t 3. Record > No further action (Auto rec.)\n
+4. Optional: Record your command which will sound when you Tap/slide, for example: "dialing home" or "navigating to the office”\n  </string>
+    <string name="title_activity_record">Record Your Command</string>
+    <string name="pleaseRecord">Please record your command</string>
+    <string name="recordDesc">Click button to record your command, which will sound when you TAP/Slide</string>
+    <string name="recordButtonTXT">Record</string>
+    <string name="noBtn">No thanks</string>
+    <string name="recordAgain">Record Again</string>
+    <string name="okTxt">Ok</string>
+    <string name="listenTxt">Listen</string>
+    <string name="stopTxt">Stop record</string>
+    <string name="hintName">Name</string>
+    <string name="hintPhone">Phone</string>
+    <string name="dialCustomization">Dial Customization</string>
+    <string name="recordMemo">Record memo customization</string>
+    <string name="title_activity_gpsrecord">GPS Settings</string>
+    <string name="addressTxtGesture">Please insert your address for this tap gesture</string>
+    <string name="afterSavingTxt">After saving this gesture will launch waze app \n
+        and navigate to the address you specified</string>
+    <string name="addressHere">Put your address here</string>
+    <string name="title_activity_share">ShareActivity</string>
+    <string name="gpsTXT">GPS</string>
+    <string name="SlideTXT">Slide</string>
+    <string name="title_activity_sms">SMS</string>
+    <string name="gpsSPEED">GPS Speed</string>
+    <string name="action_exit">Exit</string>
+    <string name="action_SMS">SMS Settings</string>
+    <string name="title_activity_record_config">RecordConfig</string>
+    <string name="app_id">1489464644638883</string>
+    <string name="title_facebook_login">Facebook</string>
+
+</resources>
