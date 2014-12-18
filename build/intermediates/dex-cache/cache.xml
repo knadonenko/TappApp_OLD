@@ -2,11 +2,25 @@
 <items version="2" >
 
     <item
-        jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/libs/signpost-commonshttp4-1.2.1.1.jar"
+        jar="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/exploded-aar/com.google.android.gms/play-services/5.0.89/classes.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="576194c2d9ecf9382ed5ab913de8b36640507847">
-        <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/signpost-commonshttp4-1.2.1.1-3608c1926587681b12afa924f190c02de92072b9.jar" />
+        sha1="d71573c9c5ea98a8db47ad6ff993a63d492b3bfa">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/classes-f10a4309321fb7da61de9cfa4193acbfe757dca7.jar" />
+    </item>
+    <item
+        jar="/Users/air/Dropbox/TappApp/tapp app/libs/mail.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="428e267abff0d10802ccde86b915da2c20471160">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/mail-af8fe2d56d9669667ca44ebebf8173a2c4b1cd0b.jar" />
+    </item>
+    <item
+        jar="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/classes-b8ca4b4b416cd1a4f63c6df8de2d695be3ee9a38.jar" />
     </item>
     <item
         jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/exploded-aar/com.google.android.gms/play-services/5.0.89/classes.jar"
@@ -51,6 +65,13 @@
         <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/activation-2d75d046cd50d20525b5d9ef0e214507cc99bcc4.jar" />
     </item>
     <item
+        jar="/Users/air/Dropbox/TappApp/tapp app/libs/signpost-commonshttp4-1.2.1.1.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="576194c2d9ecf9382ed5ab913de8b36640507847">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/signpost-commonshttp4-1.2.1.1-cc1922c90ca57e2648481190a2ed55ac4d033cbe.jar" />
+    </item>
+    <item
         jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/libs/signpost-core-1.2.1.1.jar"
         jumboMode="false"
         revision="19.1.0"
@@ -65,25 +86,25 @@
         <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-a2d8b47080aa4a362d0699864687459d4ac6f18c.jar" />
     </item>
     <item
-        jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
+        jar="/Users/air/Dropbox/TappApp/tapp app/libs/activation.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
-        <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/classes-19475c04eb0f7f2f3f34ff94c07011f0f24446bf.jar" />
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/activation-eade86dba03e254228502a60a281a51a4a79b6af.jar" />
     </item>
     <item
-        jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/libs/twitter4j-examples-4.0.3-SNAPSHOT.jar"
+        jar="/Users/air/Dropbox/TappApp/tapp app/libs/twitter4j-stream-4.0.3-SNAPSHOT.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="e5e399d743cd5c74834e87ed0bccb9fe8237c40e">
-        <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/twitter4j-examples-4.0.3-SNAPSHOT-0445c0952a9ef5827cd706f1630794fdaf991d8a.jar" />
+        sha1="a2192fbd7ebab54978ef9d8c7cd3316fcfe3fd21">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/twitter4j-stream-4.0.3-SNAPSHOT-d3e48a74e41598e0a914bc7bf9a1961f5cb4de19.jar" />
     </item>
     <item
-        jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/libs/additionnal.jar"
+        jar="/Users/air/Dropbox/TappApp/tapp app/libs/signpost-core-1.2.1.1.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
-        <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/additionnal-5979e24b1ddf9b46e4ae1460bc809675b65a4b75.jar" />
+        sha1="d1b39a438178bc885d724458de64cee33f1932a6">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/signpost-core-1.2.1.1-f5719f06c99d2dbbc3ce7bcab34840895daf11e0.jar" />
     </item>
     <item
         jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/exploded-aar/com.astuetz/pagerslidingtabstrip/1.0.1/classes.jar"
@@ -93,18 +114,18 @@
         <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/classes-7b8f84b25a0dcfd198a501edaf6b2331a720e7a9.jar" />
     </item>
     <item
-        jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
-        <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-8b866ac1706173e27b973dfed8f284e586719be2.jar" />
-    </item>
-    <item
         jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/libs/twitter4j-media-support-4.0.3-SNAPSHOT.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="891cce12cb4891b84a03e3755dec92435a655db0">
         <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/twitter4j-media-support-4.0.3-SNAPSHOT-5ab46642012e654751af1228e28777e1204540d1.jar" />
+    </item>
+    <item
+        jar="/Users/air/Dropbox/TappApp/tapp app/libs/twitter4j-media-support-4.0.3-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="891cce12cb4891b84a03e3755dec92435a655db0">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/twitter4j-media-support-4.0.3-SNAPSHOT-b8d4acdff578984607737fbeb3703bd884cff9c4.jar" />
     </item>
     <item
         jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/exploded-aar/TapTester/facebook/unspecified/libs/bolts-android-1.1.2.jar"
@@ -114,11 +135,11 @@
         <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/bolts-android-1.1.2-234fed0691ea386750f74d40374cd4ee3080bba3.jar" />
     </item>
     <item
-        jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/libs/twitter4j-stream-4.0.3-SNAPSHOT.jar"
+        jar="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/exploded-aar/TappApp/facebook/unspecified/classes.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="a2192fbd7ebab54978ef9d8c7cd3316fcfe3fd21">
-        <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/twitter4j-stream-4.0.3-SNAPSHOT-dd9120b6240ea34559b54c4caec93016b5d22b30.jar" />
+        sha1="1f4fb7dfd3cfd472ab7741fe8dc81506916fbfa2">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/classes-cc8e73980b48a97469107eed6bb75db39584e755.jar" />
     </item>
     <item
         jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/libs/twitter4j-core-4.0.3-SNAPSHOT.jar"
@@ -128,11 +149,116 @@
         <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/twitter4j-core-4.0.3-SNAPSHOT-485c07b2eb967281d5e8a1c7ecfe946aa5aace33.jar" />
     </item>
     <item
+        jar="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/classes-0606440f6baf058dc1d2de608a4066951e270f46.jar" />
+    </item>
+    <item
+        jar="/Users/air/Dropbox/TappApp/tapp app/libs/additionnal.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/additionnal-d095da17340fac277f2392bf7d1e4b4626bf5912.jar" />
+    </item>
+    <item
+        jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/libs/signpost-commonshttp4-1.2.1.1.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="576194c2d9ecf9382ed5ab913de8b36640507847">
+        <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/signpost-commonshttp4-1.2.1.1-3608c1926587681b12afa924f190c02de92072b9.jar" />
+    </item>
+    <item
+        jar="/Users/air/Dropbox/TappApp/tapp app/libs/twitter4j-async-4.0.3-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="5b981d55047a956cd6092e4a3c58ff00360886fc">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/twitter4j-async-4.0.3-SNAPSHOT-3e1446d5c6488b03fff4a9d9096b5e8c09e9c748.jar" />
+    </item>
+    <item
+        jar="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/exploded-aar/com.astuetz/pagerslidingtabstrip/1.0.1/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="7912610ed96381c25c36d986eba422731b9641b6">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/classes-946c88ed51b3fe155f34d5a3a12cfcc276d103e1.jar" />
+    </item>
+    <item
+        jar="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/exploded-aar/TappApp/facebook/unspecified/libs/bolts-android-1.1.2.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/bolts-android-1.1.2-1e2a1fa985b90a5199ecdc72d57b33825b414e4e.jar" />
+    </item>
+    <item
+        jar="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-db9dd6664b604a3753676e84ed5e639db7536baf.jar" />
+    </item>
+    <item
+        jar="/Users/air/Dropbox/TappApp/tapp app/libs/twitter4j-core-4.0.3-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="353799be4834bc35cecf5cfa80fb55a8d5848887">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/twitter4j-core-4.0.3-SNAPSHOT-47e29e5984d138bc8c7bb4fe24ee64ae268f82e9.jar" />
+    </item>
+    <item
+        jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
+        <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/classes-19475c04eb0f7f2f3f34ff94c07011f0f24446bf.jar" />
+    </item>
+    <item
+        jar="/Users/air/Dropbox/TappApp/tapp app/libs/httpclient-4.0.1.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="1d7d28fa738bdbfe4fbd895d9486308999bdf440">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/httpclient-4.0.1-ce14bb952058269c842d5942f6a2220435369b42.jar" />
+    </item>
+    <item
+        jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/libs/additionnal.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
+        <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/additionnal-5979e24b1ddf9b46e4ae1460bc809675b65a4b75.jar" />
+    </item>
+    <item
+        jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/libs/twitter4j-examples-4.0.3-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="e5e399d743cd5c74834e87ed0bccb9fe8237c40e">
+        <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/twitter4j-examples-4.0.3-SNAPSHOT-0445c0952a9ef5827cd706f1630794fdaf991d8a.jar" />
+    </item>
+    <item
+        jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
+        <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-8b866ac1706173e27b973dfed8f284e586719be2.jar" />
+    </item>
+    <item
+        jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/libs/twitter4j-stream-4.0.3-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="a2192fbd7ebab54978ef9d8c7cd3316fcfe3fd21">
+        <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/twitter4j-stream-4.0.3-SNAPSHOT-dd9120b6240ea34559b54c4caec93016b5d22b30.jar" />
+    </item>
+    <item
         jar="/Users/air/Google Диск/Android Projects/TapTester/tapp app/libs/twitter4j-async-4.0.3-SNAPSHOT.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="5b981d55047a956cd6092e4a3c58ff00360886fc">
         <dex dex="/Users/air/Google Диск/Android Projects/TapTester/tapp app/build/intermediates/pre-dexed/debug/twitter4j-async-4.0.3-SNAPSHOT-61e849c18bb30c7136688cab267bc83a0dee5872.jar" />
+    </item>
+    <item
+        jar="/Users/air/Dropbox/TappApp/tapp app/libs/twitter4j-examples-4.0.3-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="e5e399d743cd5c74834e87ed0bccb9fe8237c40e">
+        <dex dex="/Users/air/Dropbox/TappApp/tapp app/build/intermediates/pre-dexed/debug/twitter4j-examples-4.0.3-SNAPSHOT-215c2f1bde014f1e5f23be4187e2ef829e413453.jar" />
     </item>
 
 </items>
