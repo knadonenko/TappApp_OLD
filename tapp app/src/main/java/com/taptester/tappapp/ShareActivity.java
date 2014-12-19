@@ -234,22 +234,22 @@ public class ShareActivity extends ActionBarActivity {
         }
 
         Intent email = new Intent(Intent.ACTION_SEND);
-        String shareText = "Dialing and navigating have never been easier: a simple tap or slide of your finger anywhere on the screen will dial your chosen contact or navigate to your chosen destination" +
-                "Setting up: \\n\n" +
-                "        Easily set your most frequent contacts and destinations and you are ready to go. \\n\\n\n" +
-                "For example: 1 TAP dials mom, 2 TAPS dials work,\n" +
-                "a slide up navigates you home…\\n\n" +
-                "If you wish you can record your command, which will sound every time you use the\n" +
-                "same TAP/Slide, this will give you a confirmation without looking at the screen… \\n\\n\n" +
+        String shareText = "Dialing and navigating have never been easier: a simple tap or slide of your finger anywhere on the screen will dial your chosen contact or navigate to your chosen destination\n" +
+                "Setting up:\n" +
+                "Easily set your most frequent contacts and destinations and you are ready to go.\n" +
+                "For example: 1 TAP dials mom, 2 TAPS dials work," +
+                "a slide up navigates you home…\n" +
+                "If you wish you can record your command, which will sound every time you use the" +
+                "same TAP/Slide, this will give you a confirmation without looking at the screen… \n\n" +
                 "\n" +
-                "Example: if 1 TAP dials mom, just record \"dialing mom\" \\n\n" +
-                "1. Choose EDIT to set your TAP commands. (Click and hold edit button)\\n\n" +
-                "2. Click the chosen TAP Slide\\n\n" +
-                "3. Choose command from dialog box\\n\n" +
-                "\\t 1. Dial > Choose contact from your contacts\\n\n" +
-                "\\t 2. GPS > Set destination in GPS application\\n\n" +
-                "\\t 3. Record > No further action (Auto rec.)\\n\n" +
-                "4. Optional: Record your command which will sound when you Tap/slide, for example: \"dialing home\" or \"navigating to the office”\\n ";
+                "Example: if 1 TAP dials mom, just record \"dialing mom\" \n" +
+                " 1. Choose EDIT to set your TAP commands. (Click and hold edit button)\n" +
+                " 2. Click the chosen TAP Slide\n" +
+                " 3. Choose command from dialog box\n" +
+                "    1. Dial > Choose contact from your contacts\n" +
+                "    2. GPS > Set destination in GPS application\n" +
+                "    3. Record > No further action (Auto rec.)\n" +
+                "4. Optional: Record your command which will sound when you Tap/slide, for example: \"dialing home\" or \"navigating to the office”\n ";
         email.setType("application/octet-stream");
         //email.putExtra(Intent.EXTRA_EMAIL, new String[] { "" });
         email.putExtra(Intent.EXTRA_SUBJECT, "Use DriveApp");

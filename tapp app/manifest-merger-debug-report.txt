@@ -19,7 +19,7 @@ MERGED from com.google.android.gms:play-services:5.0.89:15:5
 MERGED from com.android.support:support-v4:20.0.0:16:5
 MERGED from com.astuetz:pagerslidingtabstrip:1.0.1:2:5
 MERGED from com.android.support:support-v4:20.0.0:16:5
-MERGED from TapTester:facebook:unspecified:20:5
+MERGED from TappApp:facebook:unspecified:20:5
 MERGED from com.android.support:support-v4:20.0.0:16:5
 	android:targetSdkVersion
 		ADDED from AndroidManifest.xml:8:9
@@ -79,7 +79,7 @@ MERGED from com.google.android.gms:play-services:5.0.89:16:5
 MERGED from com.android.support:support-v4:20.0.0:17:5
 MERGED from com.astuetz:pagerslidingtabstrip:1.0.1:4:5
 MERGED from com.android.support:support-v4:20.0.0:17:5
-MERGED from TapTester:facebook:unspecified:24:5
+MERGED from TappApp:facebook:unspecified:24:5
 MERGED from com.android.support:support-v4:20.0.0:17:5
 	android:label
 		ADDED from AndroidManifest.xml:24:9
@@ -103,64 +103,64 @@ ADDED from AndroidManifest.xml:27:9
 		ADDED from AndroidManifest.xml:29:13
 	android:name
 		ADDED from AndroidManifest.xml:28:13
-activity#com.taptester.tappapp.Config_Activity
-ADDED from AndroidManifest.xml:33:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:36:13
-	android:label
-		ADDED from AndroidManifest.xml:35:13
-	android:name
-		ADDED from AndroidManifest.xml:34:13
-activity#com.taptester.tappapp.DialActivity
-ADDED from AndroidManifest.xml:38:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:41:13
-	android:label
-		ADDED from AndroidManifest.xml:40:13
-	android:name
-		ADDED from AndroidManifest.xml:39:13
-activity#com.taptester.tappapp.InfoAcitivity
-ADDED from AndroidManifest.xml:43:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:46:13
-	android:label
-		ADDED from AndroidManifest.xml:45:13
-	android:name
-		ADDED from AndroidManifest.xml:44:13
-activity#com.taptester.tappapp.RecordActivity
-ADDED from AndroidManifest.xml:48:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:51:13
-	android:label
-		ADDED from AndroidManifest.xml:50:13
-	android:name
-		ADDED from AndroidManifest.xml:49:13
-activity#com.taptester.tappapp.GPSRecord
-ADDED from AndroidManifest.xml:53:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:56:13
-	android:label
-		ADDED from AndroidManifest.xml:55:13
-	android:name
-		ADDED from AndroidManifest.xml:54:13
-activity#com.taptester.tappapp.ShareActivity
-ADDED from AndroidManifest.xml:58:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:61:13
-	android:label
-		ADDED from AndroidManifest.xml:60:13
-	android:name
-		ADDED from AndroidManifest.xml:59:13
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:62:13
+ADDED from AndroidManifest.xml:31:13
 action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:63:17
+ADDED from AndroidManifest.xml:32:17
 	android:name
-		ADDED from AndroidManifest.xml:63:25
+		ADDED from AndroidManifest.xml:32:25
 category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:65:17
+ADDED from AndroidManifest.xml:34:17
 	android:name
-		ADDED from AndroidManifest.xml:65:27
+		ADDED from AndroidManifest.xml:34:27
+activity#com.taptester.tappapp.Config_Activity
+ADDED from AndroidManifest.xml:37:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:40:13
+	android:label
+		ADDED from AndroidManifest.xml:39:13
+	android:name
+		ADDED from AndroidManifest.xml:38:13
+activity#com.taptester.tappapp.DialActivity
+ADDED from AndroidManifest.xml:42:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:45:13
+	android:label
+		ADDED from AndroidManifest.xml:44:13
+	android:name
+		ADDED from AndroidManifest.xml:43:13
+activity#com.taptester.tappapp.InfoAcitivity
+ADDED from AndroidManifest.xml:47:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:50:13
+	android:label
+		ADDED from AndroidManifest.xml:49:13
+	android:name
+		ADDED from AndroidManifest.xml:48:13
+activity#com.taptester.tappapp.RecordActivity
+ADDED from AndroidManifest.xml:52:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:55:13
+	android:label
+		ADDED from AndroidManifest.xml:54:13
+	android:name
+		ADDED from AndroidManifest.xml:53:13
+activity#com.taptester.tappapp.GPSRecord
+ADDED from AndroidManifest.xml:57:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:60:13
+	android:label
+		ADDED from AndroidManifest.xml:59:13
+	android:name
+		ADDED from AndroidManifest.xml:58:13
+activity#com.taptester.tappapp.ShareActivity
+ADDED from AndroidManifest.xml:62:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:65:13
+	android:label
+		ADDED from AndroidManifest.xml:64:13
+	android:name
+		ADDED from AndroidManifest.xml:63:13
 receiver#com.taptester.tappapp.CallReceiver
 ADDED from AndroidManifest.xml:69:9
 	android:name
