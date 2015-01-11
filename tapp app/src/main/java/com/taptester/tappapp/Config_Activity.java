@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.taptester.database.dbConfig;
@@ -27,6 +28,8 @@ public class Config_Activity extends ActionBarActivity implements View.OnClickLi
     Button tapOneBtn, tapTwoBtn, tapThreeBtn, tapFourBtn, tapFiveBtn, slideTop, slideBottom, slideLeft, slideRight;
     TextView tv1, tv2, tv3, tv4, tv5, tv6, tv7, tv8, tv9;
     ImageView iv1, iv2, iv3, iv4, iv5;
+    RelativeLayout relativeLayout, relativeLayout2, relativeLayout3, relativeLayout4, relativeLayout5,
+            relativeLayout6, relativeLayout7, relativeLayout8, relativeLayout9;
 
     String button, command, text;
     int configExtra;
@@ -58,6 +61,17 @@ public class Config_Activity extends ActionBarActivity implements View.OnClickLi
         slideLeft = (Button) findViewById(R.id.slideLeft);
         slideRight = (Button) findViewById(R.id.slideRight);
 
+        relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
+        relativeLayout2 = (RelativeLayout) findViewById(R.id.relativeLayout2);
+        relativeLayout3 = (RelativeLayout) findViewById(R.id.relativeLayout3);
+        relativeLayout4 = (RelativeLayout) findViewById(R.id.relativeLayout4);
+        relativeLayout5 = (RelativeLayout) findViewById(R.id.relativeLayout5);
+        relativeLayout6 = (RelativeLayout) findViewById(R.id.relativeLayout6);
+        relativeLayout7 = (RelativeLayout) findViewById(R.id.relativeLayout7);
+        relativeLayout8 = (RelativeLayout) findViewById(R.id.relativeLayout8);
+        relativeLayout9 = (RelativeLayout) findViewById(R.id.relativeLayout9);
+
+
         tapOneBtn.setOnClickListener(this);
         tapTwoBtn.setOnClickListener(this);
         tapThreeBtn.setOnClickListener(this);
@@ -67,6 +81,16 @@ public class Config_Activity extends ActionBarActivity implements View.OnClickLi
         slideBottom.setOnClickListener(this);
         slideLeft.setOnClickListener(this);
         slideRight.setOnClickListener(this);
+
+        relativeLayout.setOnClickListener(this);
+        relativeLayout2.setOnClickListener(this);
+        relativeLayout3.setOnClickListener(this);
+        relativeLayout4.setOnClickListener(this);
+        relativeLayout5.setOnClickListener(this);
+        relativeLayout6.setOnClickListener(this);
+        relativeLayout7.setOnClickListener(this);
+        relativeLayout8.setOnClickListener(this);
+        relativeLayout9.setOnClickListener(this);
 
     }
 
@@ -179,6 +203,42 @@ public class Config_Activity extends ActionBarActivity implements View.OnClickLi
                 configExtra = 8;
                 break;
             case R.id.slideRight :
+                showMenu(slideRight);
+                configExtra = 9;
+                break;
+            case R.id.relativeLayout :
+                showMenu(tapOneBtn);
+                configExtra = 1;
+                break;
+            case R.id.relativeLayout2 :
+                showMenu(tapTwoBtn);
+                configExtra = 2;
+                break;
+            case R.id.relativeLayout3 :
+                showMenu(tapThreeBtn);
+                configExtra = 3;
+                break;
+            case R.id.relativeLayout4 :
+                showMenu(tapFourBtn);
+                configExtra = 4;
+                break;
+            case R.id.relativeLayout5 :
+                showMenu(tapFiveBtn);
+                configExtra = 5;
+                break;
+            case R.id.relativeLayout6 :
+                showMenu(slideTop);
+                configExtra = 6;
+                break;
+            case R.id.relativeLayout7 :
+                showMenu(slideBottom);
+                configExtra = 7;
+                break;
+            case R.id.relativeLayout8 :
+                showMenu(slideLeft);
+                configExtra = 8;
+                break;
+            case R.id.relativeLayout9 :
                 showMenu(slideRight);
                 configExtra = 9;
                 break;
