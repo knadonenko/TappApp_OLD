@@ -90,6 +90,7 @@
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/textView2"
             android:layout_marginRight="10dp"/>
+
     </RelativeLayout>
 
     <RelativeLayout

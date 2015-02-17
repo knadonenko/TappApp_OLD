@@ -58,10 +58,6 @@ public class ShareActivity extends ActionBarActivity {
     final public static String  CALLBACK_SCHEME = "x-latify-oauth-twitter";
     final public static String  CALLBACK_URL = CALLBACK_SCHEME + "://callback";
 
-
-    String string_img_url;
-    String string_msg;
-
     File casted_image;
     Button btn;
 
@@ -256,12 +252,6 @@ public class ShareActivity extends ActionBarActivity {
         email.putExtra(Intent.EXTRA_TEXT, shareText);
         email.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
         startActivity(Intent.createChooser(email, "Choose an Email client :"));
-        /*Intent shareIntent = new Intent(Intent.ACTION_SEND);
-        shareIntent.setType("plain/text");
-        shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareText);
-        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Use DriveApp");
-        shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
-        startActivity(shareIntent);*/
     }
 
     public void shareTwitter(View v) {
@@ -293,20 +283,6 @@ public class ShareActivity extends ActionBarActivity {
             Toast.makeText(this, "Twitter app isn't found", Toast.LENGTH_LONG).show();
         }
 
-        /*if (isNetworkAvailable()) {
-            Twitt_Sharing twitt = new Twitt_Sharing(ShareActivity.this,
-                    consumer_key, secret_key);
-            //string_img_url = "https://pp.vk.me/c625721/v625721167/24c6/3eP-lq5_ut8.jpg";
-            string_msg = "Dialing and navigating have never been easier";
-            // here we have web url image so we have to make it as file to
-            // upload
-            String_to_File(string_img_url);
-            // Now share both message & image to sharing activity
-            twitt.shareToTwitter(string_msg, casted_image);
-
-        } else {
-            Toast.makeText(ShareActivity.this ,"No Network Connection Available !!!", Toast.LENGTH_LONG).show();
-        }*/
     }
 
     public void googleShare(View v) {
@@ -321,35 +297,6 @@ public class ShareActivity extends ActionBarActivity {
                 .getIntent();
 
         startActivityForResult(shareIntent, 0);
-
-
-        /*Intent tweetIntent = new Intent(Intent.ACTION_SEND);
-        tweetIntent.putExtra(Intent.EXTRA_TEXT, "Dialing and navigating have never been easier: a simple tap or slide of\n" +
-                "\" +\n" +
-                "                \"your finger anywhere on the screen will dial your chosen contact or\\n\" +\n" +
-                "                \"navigate to your chosen destination");
-        tweetIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
-
-        tweetIntent.setType("");
-
-        PackageManager packManager = getPackageManager();
-        List<ResolveInfo> resolvedInfoList = packManager.queryIntentActivities(tweetIntent,  PackageManager.MATCH_DEFAULT_ONLY);
-
-        boolean resolved = false;
-        for(ResolveInfo resolveInfo: resolvedInfoList){
-            if(resolveInfo.activityInfo.packageName.startsWith("com.google.android.apps.plus")){
-                tweetIntent.setClassName(
-                        resolveInfo.activityInfo.packageName,
-                        resolveInfo.activityInfo.name );
-                resolved = true;
-                break;
-            }
-        }
-        if(resolved){
-            startActivity(tweetIntent);
-        }else{
-            Toast.makeText(this, "Twitter app isn't found", Toast.LENGTH_LONG).show();
-        }*/
 
     }
 

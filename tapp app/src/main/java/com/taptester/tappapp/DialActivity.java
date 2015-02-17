@@ -35,7 +35,7 @@ public class DialActivity extends ActionBarActivity {
     private Uri uriContact;
     private String contactID;
     private String contactName;
-    private String contactNumber;
+    private String contactNumber = "";
     private int configButton;
 
     EditText editPhone, editName;
@@ -134,7 +134,70 @@ public class DialActivity extends ActionBarActivity {
 
         if (cursorPhone.moveToFirst()) {
             contactNumber = cursorPhone.getString(cursorPhone.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+        } else {
+            cursorPhone = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                    new String[]{ContactsContract.CommonDataKinds.Phone.NUMBER},
+
+                    ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ? AND " +
+                            ContactsContract.CommonDataKinds.Phone.TYPE + " = " +
+                            ContactsContract.CommonDataKinds.Phone.TYPE_HOME,
+
+                    new String[]{contactID},
+                    null);
+
+            if (cursorPhone.moveToFirst()) {
+                contactNumber = cursorPhone.getString(cursorPhone.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+            } else {
+                cursorPhone = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                        new String[]{ContactsContract.CommonDataKinds.Phone.NUMBER},
+
+                        ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ? AND " +
+                                ContactsContract.CommonDataKinds.Phone.TYPE + " = " +
+                                ContactsContract.CommonDataKinds.Phone.TYPE_WORK,
+
+                        new String[]{contactID},
+                        null);
+
+                if (cursorPhone.moveToFirst()) {
+                    contactNumber = cursorPhone.getString(cursorPhone.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                } else {
+                    cursorPhone = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                            new String[]{ContactsContract.CommonDataKinds.Phone.NUMBER},
+
+                            ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ? AND " +
+                                    ContactsContract.CommonDataKinds.Phone.TYPE + " = " +
+                                    ContactsContract.CommonDataKinds.Phone.TYPE_OTHER,
+
+                            new String[]{contactID},
+                            null);
+
+                    if (cursorPhone.moveToFirst()) {
+                        contactNumber = cursorPhone.getString(cursorPhone.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                    }
+                }
+            }
         }
+
+
+
+                /*if (contactNumber.length() == 0) {
+                    Cursor cursorWorkPhone = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                            new String[]{ContactsContract.CommonDataKinds.Phone.NUMBER},
+
+                            ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ? AND " +
+                                    ContactsContract.CommonDataKinds.Phone.TYPE + " = " +
+                                    ContactsContract.CommonDataKinds.Phone.TYPE_WORK,
+
+                            new String[]{contactID},
+                            null);
+
+                    if (cursorPhone.moveToFirst()) {
+                        contactNumber = cursorWorkPhone.getString(cursorPhone.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                    }
+                }*/
+
+//        Log.d("CONTACT", contactNumber);
+
 
         cursorPhone.close();
 
@@ -202,34 +265,11 @@ public class DialActivity extends ActionBarActivity {
         editPhone.setText(contactNumber);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.dial, menu);
-        return true;
-    }
-
     public void goBack(View v) {
         onBackPressed();
         eDB.close();
         sqlDB.close();
         finish();
     }
-
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
 
 }

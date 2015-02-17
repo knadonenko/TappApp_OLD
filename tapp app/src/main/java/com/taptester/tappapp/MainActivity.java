@@ -2,6 +2,7 @@ package com.taptester.tappapp;
 
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -89,12 +90,9 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
     String typeRecording;
     String email;
 
-    private static final String LOG_TAG = "AudioCaptureDemo";
     private static String mFileName = null;
 
     private MediaRecorder mRecorder = null;
-
-    private MediaPlayer   mPlayer = null;
 
     //UI
     ImageView image1, image2, image3, image4;
@@ -119,8 +117,6 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
 
     TelephonyManager telephonymanager;
 
-    private Handler sizeHandler = new Handler();
-
     private GPSManager gpsManager = null;
     private double speed = 0.0;
     Boolean isDriving = false;
@@ -129,12 +125,9 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
 
     Button buttonInfo, shareBtn, buttonConfig;
 
-    TextView gpsInfo;
     Boolean isRunning = false;
 
     public MainActivity() {
-        //mFileName = Environment.getExternalStorageDirectory() + File.separator
-        //        + Environment.DIRECTORY_DCIM + File.separator + "MyMemo.3gp";
         Calendar c = Calendar.getInstance();
         int hour = c.get(Calendar.HOUR);
         int minute = c.get(Calendar.MINUTE);
@@ -146,11 +139,35 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
     Runnable runnable;
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        PackageManager pm = getPackageManager();
+        ComponentName compName =
+                new ComponentName(getApplicationContext(),
+                        SMSReceiver.class);
+        pm.setComponentEnabledSetting(
+                compName,
+                PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                PackageManager.DONT_KILL_APP);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        PackageManager pm = getPackageManager();
+        ComponentName compName =
+                new ComponentName(getApplicationContext(),
+                        SMSReceiver.class);
+        pm.setComponentEnabledSetting(
+                compName,
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                PackageManager.DONT_KILL_APP);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //outputFile = Environment.getExternalStorageDirectory().
-        //        getAbsolutePath() + "/recordMemo.3gp";
 
         handler = new Handler();
         runnable = new Runnable() {
@@ -206,17 +223,6 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
         myRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);
         myRecorder.setAudioEncoder(MediaRecorder.OutputFormat.DEFAULT);
         myRecorder.setOutputFile(outputFile);
-
-        /*if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }*/
-
-        //gpsInfo = (TextView) findViewById(R.id.gps_info);
-        //gpsInfo.setText(getResources().getString(R.string.gpsSPEED));
-
-        //
 
         shareBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -293,21 +299,6 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
 
     }
 
-    /*public void shareApp(View v) {
-        Intent share = new Intent(Intent.ACTION_SEND);
-        share.setType("image/*");
-
-        //String imagePath = String.valueOf(getResources().getDrawable(R.drawable.info));
-
-        //File imageFileToShare = new File(imagePath);
-        ArrayList<Uri> uris = new ArrayList<Uri>();
-        uris.add(Uri.parse("android.resource://" + getPackageName() + "/" + R.drawable.info));
-
-        share.putExtra(Intent.EXTRA_STREAM, uris);
-        //share.putExtra(Intent.EXTRA_TEXT, "Dialing and navigating have never been easier: Use Drive App!");
-
-        startActivity(Intent.createChooser(share, "Share Image!"));
-    }*/
 
     private void startRecording() {
 
@@ -327,7 +318,7 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
             mRecorder.start();
         } catch (IOException e) {
             e.getMessage();
-            //Log.e(LOG_TAG, "prepare() failed");
+            Log.e("FAILED", "prepare() failed");
         }
 
 
@@ -344,7 +335,6 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
             uris.add(mFileName);
             image4.setEnabled(true);
             if (typeRecording.equals("1")) {
-                //email(MainActivity.this, email, "test@test.com", "My record!", "My record!", uris);
                 new SendMail().execute();
             }
         } catch (IllegalStateException e) {
@@ -364,18 +354,16 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
         extra_subject.add(subject);
         ArrayList<String> extra_text = new ArrayList<String>();
         extra_text.add(emailText);
-        //need to "send multiple" to get more than one attachment
+
         final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND_MULTIPLE);
         emailIntent.setType("plain/text");
         emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
                 new String[]{emailTo});
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, extra_subject);
         emailIntent.putExtra(Intent.EXTRA_TEXT, extra_text);
-        //emailIntent.putExtra(android.content.Intent.EXTRA_CC,
-        //       new String[]{emailCC});
-        //has to be an ArrayList
+
         ArrayList<Uri> uris = new ArrayList<Uri>();
-        //convert from paths to Android friendly Parcelable Uri's
+        //Конвертируем в URI
         for (String file : filePaths)
         {
             File fileIn = new File(file);
@@ -388,18 +376,20 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
 
     @Override
     public void onGPSUpdate(Location location) {
-        String speedTXT;
+//        String speedTXT;
         location.getLatitude();
         location.getLongitude();
         speed = location.getSpeed();
 
-        String speedString = String.valueOf(roundDecimal(convertSpeed(speed), 1));
-        String unitString = "km/h";
+        //String speedString = String.valueOf(roundDecimal(convertSpeed(speed), 1));
+        //String unitString = "km/h";
 
 
-        speedTXT = String.format("%.0f", speed);
+        //speedTXT = String.format("%.0f", speed);
 
-        if (Integer.parseInt(speedTXT) > 15) {
+//        Log.d("SPEED", String.valueOf(speed));
+
+        if (speed >= 15.0f) {
             isDriving = true;
         } else {
             isDriving = false;
@@ -451,24 +441,27 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
             super.onCallStateChanged(state, incomingNumber);
             switch(state){
                 case TelephonyManager.CALL_STATE_RINGING:
-                    //Disconnect the call here...
-                    if (isDriving) {
-                        new AlertDialog.Builder(MainActivity.this).setTitle("Keep your eyes on the road!")
-                                .setMessage("Keep your eyes on the road!")
-                                .setPositiveButton("I'm not driving", new DialogInterface.OnClickListener() {
+                    //Прерываем звонок вот здесь!!!
+                    if (isDriving == true) {
+                        if(!isFinishing()) {
+                            new AlertDialog.Builder(MainActivity.this).setTitle("Keep your eyes on the road!")
+                                    .setMessage("Keep your eyes on the road!")
+                                    .setPositiveButton("I'm not driving", new DialogInterface.OnClickListener() {
 
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                        dialogInterface.cancel();
-                                    }
-                                }).show();
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            dialogInterface.cancel();
+                                        }
+                                    }).show();
+                        }
 
                         String phoneNumber = incomingNumber;
                         Log.d("INCOMING", phoneNumber);
 
                         try {
-                            Class clazz = Class.forName(telephonymanager.getClass().getName());
-                            Method method = clazz.getDeclaredMethod("getITelephony");
+                            //именно тут отклоняем звонок!!!
+                            Class telephoneClass = Class.forName(telephonymanager.getClass().getName());
+                            Method method = telephoneClass.getDeclaredMethod("getITelephony");
                             method.setAccessible(true);
                             ITelephony iTelephony = (ITelephony) method.invoke(telephonymanager);
                             iTelephony.endCall();
@@ -486,16 +479,18 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
                             e.printStackTrace();
                         }
                         break;
-                    } else {
-                        new AlertDialog.Builder(MainActivity.this).setTitle("Keep your eyes on the road!")
-                                .setMessage("Keep your eyes on the road!")
-                                .setPositiveButton("I'm not driving", new DialogInterface.OnClickListener() {
+                    } else if(isDriving == false) {
+                        if(!isFinishing()) {
+                            new AlertDialog.Builder(MainActivity.this).setTitle("Keep your eyes on the road!")
+                                    .setMessage("Keep your eyes on the road!")
+                                    .setPositiveButton("I'm not driving", new DialogInterface.OnClickListener() {
 
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                        dialogInterface.cancel();
-                                    }
-                                }).show();
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            dialogInterface.cancel();
+                                        }
+                                    }).show();
+                        }
                         String phoneNumber = incomingNumber;
                         SmsManager sms = SmsManager.getDefault();
                         sms.sendTextMessage(phoneNumber, null, smsText, null, null);
@@ -515,7 +510,6 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
         ((TextView) findViewById(R.id.gps_info))
                 .setText(getString(R.string.gpsSPEED));
 
-        //tapImage = (ImageView) findViewById(R.id.tapObject);
         image1 = (ImageView) findViewById(R.id.imageView1);
         image2 = (ImageView) findViewById(R.id.imageView2);
         image3 = (ImageView) findViewById(R.id.imageView3);
@@ -531,11 +525,6 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
 
     }
 
-    /*public void changeSize(int widthSize) {
-        image1.requestLayout();
-        image1.getLayoutParams().width = widthSize;
-    }*/
-
     public void ChangeSizeTime(int imageNumber) {
 
         if (imageNumber == 1) {
@@ -543,23 +532,17 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
 
             CountDownTimer start = new CountDownTimer(800, 20) {
 
-
-
                 @Override
                 public void onTick(long l) {
                     imageWidth = imageWidth + 50;
                     //changeSize(imageWidth);
                     image1.requestLayout();
                     image1.getLayoutParams().width = imageWidth;
-                    //int imageStats = image1.getWidth();
-                    //tapImage.postInvalidate();
-                    //Log.d("IMAGE1", String.valueOf(imageStats));
 
                 }
 
                 @Override
                 public void onFinish() {
-                    //Log.d("done", "done");
                     ChangeSizeTime(2);
 
                 }
@@ -576,16 +559,10 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
                     imageWidth = imageWidth + 50;
                     image2.requestLayout();
                     image2.getLayoutParams().width = imageWidth;
-                    //changeSize(imageWidth);
-                    //int imageStats = image2.getWidth();
-                    //tapImage.postInvalidate();
-                    //Log.d("IMAGE2", String.valueOf(imageStats));
-
                 }
 
                 @Override
                 public void onFinish() {
-                    //Log.d("done", "done");
                     ChangeSizeTime(3);
                 }
             }.start();
@@ -601,16 +578,10 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
                     imageWidth = imageWidth + 50;
                     image3.requestLayout();
                     image3.getLayoutParams().width = imageWidth;
-                    //changeSize(imageWidth);
-                    //int imageStats = image2.getWidth();
-                    //tapImage.postInvalidate();
-                    //Log.d("IMAGE2", String.valueOf(imageStats));
-
                 }
 
                 @Override
                 public void onFinish() {
-                    //Log.d("done", "done");
                     ChangeSizeTime(4);
                 }
             }.start();
@@ -625,17 +596,11 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
                     imageWidth = imageWidth + 80;
                     image4.requestLayout();
                     image4.getLayoutParams().width = imageWidth;
-                    //changeSize(imageWidth);
-                    //int imageStats = image4.getWidth();
-                    //tapImage.postInvalidate();
-                    //Log.d("IMAGE2", String.valueOf(imageStats));
-
                 }
 
                 @Override
                 public void onFinish() {
                     textLayout.setVisibility(View.VISIBLE);
-                    //Log.d("done", "done");
                 }
             }.start();
         }
@@ -645,17 +610,10 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
     @Override
     protected void onPause() {
         super.onPause();
-//        image1.setVisibility(View.GONE);
-//        image2.setVisibility(View.GONE);
-        //image3.setVisibility(View.GONE);
-        //image4.setVisibility(View.GONE);
         image1.getLayoutParams().width = 0;
         image2.getLayoutParams().width = 0;
         image3.getLayoutParams().width = 0;
         image4.getLayoutParams().width = 0;
-
-
-
     }
 
     public boolean onTouchEvent(MotionEvent event) {
@@ -945,40 +903,15 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
 
     public void checkTap(View v) {
         tapCounter++;
-        //Log.d("Число нажатий: ", String.valueOf(tapCounter));
 
         if(isRunning == false) {
 
             handler.postDelayed(runnable, 2500);
             isRunning = true;
-
-            /*Handler handler = new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-
-                }
-            }, 2500);*/
         } else {
             handler.removeCallbacks(runnable);
             handler.postDelayed(runnable, 2500);
         }
-        /*new CountDownTimer(1500, 500) {
-            @Override
-            public void onTick(long l) {
-
-            }
-
-            @Override
-            public void onFinish() {
-
-                tapString = String.valueOf(tapCounter);
-
-                getDB();
-
-                //dbConfig.COMMAND_NAME = tapString;
-
-            }
-        }.start();*/
 
     }
 
@@ -1124,16 +1057,6 @@ public class MainActivity extends ActionBarActivity implements GPSCallback {
 
             }
         }.start();
-    }
-
-    public void OpenSettings(View v) {
-
-        //finish();
-    }
-
-    public void OpenInfo(View v) {
-
-        //finish();
     }
 
     @Override

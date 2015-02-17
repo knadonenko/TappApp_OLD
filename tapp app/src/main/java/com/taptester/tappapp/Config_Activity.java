@@ -1,20 +1,28 @@
 package com.taptester.tappapp;
 
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -30,6 +38,8 @@ public class Config_Activity extends ActionBarActivity implements View.OnClickLi
     ImageView iv1, iv2, iv3, iv4, iv5;
     RelativeLayout relativeLayout, relativeLayout2, relativeLayout3, relativeLayout4, relativeLayout5,
             relativeLayout6, relativeLayout7, relativeLayout8, relativeLayout9;
+
+    private Menu menu;
 
     String button, command, text;
     int configExtra;
@@ -150,6 +160,7 @@ public class Config_Activity extends ActionBarActivity implements View.OnClickLi
             ((ImageView)findViewById(imageViewId[tvNumber])).setImageResource(R.drawable.phone);
         } else if (command_number == 2) {
             ((TextView)findViewById(textViewID[tvNumber])).setText(R.string.record);
+            ((ImageView)findViewById(imageViewId[tvNumber])).setImageResource(R.drawable.record);
         } else if (command_number == 4) {
             ((TextView)findViewById(textViewID[tvNumber])).setText(R.string.not_active);
             ((ImageView)findViewById(imageViewId[tvNumber])).setImageDrawable(null);
@@ -173,6 +184,18 @@ public class Config_Activity extends ActionBarActivity implements View.OnClickLi
             case R.id.tapOneButton :
                 showMenu(tapOneBtn);
                 configExtra = 1;
+//                int[] location = new int[2];
+                //currentRowId = position;
+                //currentRow = v;
+                // Get the x, y location and store it in the location[] array
+                // location[0] = x, location[1] = y.
+                //v.getLocationOnScreen(location);
+
+                //Initialize the Point with x, and y positions
+//                Point point = new Point();
+//                point.x = location[0];
+//                point.y = location[1];
+//                showStatusPopup(Config_Activity.this, point);
                 break;
             case R.id.tapTwoButton :
                 showMenu(tapTwoBtn);
@@ -248,6 +271,31 @@ public class Config_Activity extends ActionBarActivity implements View.OnClickLi
 
     }
 
+    private void showStatusPopup(final Activity context, Point p) {
+
+        // Inflate the popup_layout.xml
+        LinearLayout viewGroup = (LinearLayout) context.findViewById(R.id.popupmenu);
+        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View layout = layoutInflater.inflate(R.layout.popupwindow, null);
+
+        // Creating the PopupWindow
+        PopupWindow changeStatusPopUp = new PopupWindow(context);
+        changeStatusPopUp.setContentView(layout);
+        changeStatusPopUp.setWidth(LinearLayout.LayoutParams.WRAP_CONTENT);
+        changeStatusPopUp.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
+        changeStatusPopUp.setFocusable(true);
+
+        // Some offset to align the popup a bit to the left, and a bit down, relative to button's position.
+        int OFFSET_X = -20;
+        int OFFSET_Y = 50;
+
+        //Clear the default translucent background
+        changeStatusPopUp.setBackgroundDrawable(new BitmapDrawable());
+
+        // Displaying the popup at the specified location, + offsets.
+        changeStatusPopUp.showAtLocation(layout, Gravity.NO_GRAVITY, p.x + OFFSET_X, p.y + OFFSET_Y);
+    }
+
     public void smsSettings(View v) {
         Intent intent = new Intent(Config_Activity.this, SMS.class);
         startActivity(intent);
@@ -266,22 +314,32 @@ public class Config_Activity extends ActionBarActivity implements View.OnClickLi
                         Intent configIntent = new Intent(Config_Activity.this, DialActivity.class);
                         configIntent.putExtra("buttonNum", configExtra);
                         startActivity(configIntent);
+                        DeleteNumber(configExtra);
+                        updateTextView(configExtra, 4);
+//                        finish();
                         return true;
                     case R.id.Record :
                         Intent recordIntent = new Intent(Config_Activity.this, RecordConfig.class);
                         recordIntent.putExtra("buttonNum", configExtra);
                         startActivity(recordIntent);
+                        DeleteNumber(configExtra);
+                        updateTextView(configExtra, 4);
+//                        finish();
                         return true;
                     case R.id.GPS:
                         Intent gpsIntent = new Intent(Config_Activity.this, GPSRecord.class);
                         gpsIntent.putExtra("buttonNum", configExtra);
                         startActivity(gpsIntent);
+                        DeleteNumber(configExtra);
+                        updateTextView(configExtra, 4);
+//                        finish();
                         return true;
                     case R.id.notActive :
                         //int buttonNum = configIntent.getIntExtra("buttonNum", 0);
                         Log.d("BUTTON", String.valueOf(configExtra));
                         DeleteNumber(configExtra);
                         updateTextView(configExtra, 4);
+//                        finish();
                         return true;
                     default:
                         return false;
@@ -312,7 +370,8 @@ public class Config_Activity extends ActionBarActivity implements View.OnClickLi
     public boolean onCreateOptionsMenu(Menu menu) {
         
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.config_, menu);
+        getMenuInflater().inflate(R.menu.config_menu, menu);
+        this.menu = menu;
         return true;
     }
 
